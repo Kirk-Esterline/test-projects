@@ -8,4 +8,6 @@ Array.from(imgButtons).forEach((element) => {
 function changeImage() {
     let newImage = this.src
     heroImage.src=newImage
+    document.getElementById('lure-item-number').innerText=heroImage.src
+    document.getElementById('lure-notes').innerText='This is a test'
 }
