@@ -95,7 +95,7 @@ footer {
 /* hero image styling */
 
 .hero-img-div {
-	max-width: 75%;
+	max-width: 60%;
 	margin: 0 auto;
 	border: 2px solid black
 }
@@ -119,4 +119,12 @@ footer {
 	max-width: 15%;
 	padding: 1em 0;
 	cursor: pointer;
+}
+
+.small-heading {
+	font-weight: bold;
+}
+
+.hidden {
+	display: none;
 }
