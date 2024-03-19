@@ -115,7 +115,7 @@ footer {
 	margin: 0 auto;
 }
 
-.gallery > img {
+.gallery > img, .gallery > div {
 	max-width: 15%;
 	padding: 1em 0;
 	cursor: pointer;
