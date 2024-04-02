@@ -9,7 +9,7 @@ Array.from(imgButtons).forEach((element) => {
 function changeImage() {
     let newImage = this
     heroImage.src=newImage.src
-    document.getElementById('lure-item-number').innerText=newImage.span
-    document.getElementById('lure-notes').innerHTML=newImage.p
+    document.getElementById('lure-item-number').innerText=newImage.dataset.item
+    document.getElementById('lure-notes').innerHTML=newImage.dataset.des
 }
 
