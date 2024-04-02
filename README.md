@@ -3,10 +3,14 @@
 
 ## Interactive Gallery
 
-The aim with this text code is to create an image gallery, where the hero image and description changes based on the gallery image that was clicked. 
+This test code aims to create an image gallery, where the hero image and description change based on the gallery image that was clicked. 
 
 **How it works**
-Event listeners were added to each of the gallery images and when clicked a function is called that changes the 'src' of hero image. Additionally 'innerText' is added to the description 'p' element when different gallery images are clicked on.
+Event listeners were added to each of the gallery images and when clicked a function is called that changes the 'src' of the hero image. Additionally 'innerText' is added to the description 'p' element when different gallery images are clicked on.
+
+**Recent Upgrades**
+- The item numbers and descriptions are now all incorporated into the img element. Data elements were added to the images which contain the necessary description text. The text contained in the data attribute is hidden until the gallery image is selected. At that point, the JS function reads the data text and adds it to the visible 'p' element in effect showing the image description. The item number works similarly, but the text is placed in a 'span' rather than a 'p' element.
 
 **What I've learned**
-1. I learned to be less specific about the use of '.this' which allowed for more flexibilty. For example in main.js newImage is defined as 'this'. Originally it was defined as 'this.src' which worked fine, but it required a new binding to be declared to target different parts of the element that was clicked. By being less specific and defining newImage as simply 'this' only one binding is needed and all the attributes of newImage can be accesssed, for example newImage.src or newImage.alt
+1. I learned to be less specific about the use of '.this' which allowed for more flexibility. For example, in main.js newImage is defined as 'this'. Originally it was defined as 'this.src' which worked fine, but it required a new binding to be declared to target different parts of the element that was clicked. By being less specific and defining newImage as simply 'this' only one binding is needed and all the attributes of newImage can be accessed, for example, newImage.src or newImage.alt
+2. I learned about the html data attribute during this project. The data attribute enables additional content to be added to an element without changing the way it behaves or is displayed. And, importantly 'data' can be accessed easily and cleanly by JS.
