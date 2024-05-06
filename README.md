@@ -1,6 +1,11 @@
 # test-projects
 **A repo for testing portions of code for projects I am working on**
 
+## Image Banner
+
+This is a test of adding text on top of an image. 
+The end goal is a plugin or JS script that will add a banner over an image. For instance adding a 'new release' banner over a product image. 
+
 ## Interactive Gallery
 
 This test code aims to create an image gallery, where the hero image and description change based on the gallery image that was clicked. 
