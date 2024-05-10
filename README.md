@@ -6,6 +6,9 @@
 This is a test of adding text on top of an image. 
 The end goal is a plugin or JS script that will add a banner over an image. For instance adding a 'new release' banner over a product image. 
 
+**How it works**
+This works by using the 'position' properties in CSS. By giving the containing div a postion of 'relative' it allowed descendant elements to be positioned in relation to that containing elements. When the 'span' element is offset from its original position, it is now positioned in relation to the containing div.
+
 ## Interactive Gallery
 
 This test code aims to create an image gallery, where the hero image and description change based on the gallery image that was clicked. 
