@@ -9,6 +9,9 @@ The end goal is a plugin or JS script that will add a banner over an image. For 
 **How it works**
 This works by using the 'position' properties in CSS. By giving the containing div a postion of 'relative' it allowed descendant elements to be positioned in relation to that containing elements. When the 'span' element is offset from its original position, it is now positioned in relation to the containing div.
 
+**Future Plans**
+The plan is to make this a custom WordPress plugin that can be added to images to display a chosen banner on the image. 
+
 ## Interactive Gallery
 
 This test code aims to create an image gallery, where the hero image and description change based on the gallery image that was clicked. 
