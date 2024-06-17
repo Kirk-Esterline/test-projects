@@ -6,7 +6,7 @@
 This is a proof of concept for a tool that would allow a video banner or caption to be added and edited without the need to edit the videos primary file. 
 
 **How it works**
-Similar to the image banner project, this banner works using the absolute position property to move a text element on top of a 
+Similar to the image banner project, this banner works using the absolute position property to move a text element on top of an embedded video element. A simple JS function collects the value from inside the input field and displays it on top of the embedded video. 
 
 ## Image Banner
 
