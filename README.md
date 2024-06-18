@@ -8,10 +8,13 @@ This is a proof of concept for a tool that would allow a video banner or caption
 **How it works**
 Similar to the image banner project, this banner works using the absolute position property to move a text element on top of an embedded video element. A simple JS function collects the value from inside the input field and displays it on top of the embedded video. 
 
+**Future Plans**
+- Add a feature to specify when during the video the banner or caption will be displayed. The first step would be to dig into the Vimeo API and see if there is functionality there for a delay. After that potentially use a delay within JS, or potentially use jQuerey to define when the video starts.
+
 ## Image Banner
 
 This is a test of adding text on top of an image. 
-The end goal is a plugin or JS script that will add a banner over an image. For instance adding a 'new release' banner over a product image. 
+The end goal is a plugin or JS script that will add a banner over an image. For instance, adding a 'new release' banner over a product image. 
 
 **How it works**
 This works by using the 'position' properties in CSS. By giving the containing div a postion of 'relative' it allowed descendant elements to be positioned in relation to that containing elements. When the 'span' element is offset from its original position, it is now positioned in relation to the containing div.
