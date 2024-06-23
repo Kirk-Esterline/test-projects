@@ -10,6 +10,7 @@ Similar to the image banner project, this banner works using the absolute positi
 
 **Future Plans**
 - Add a feature to specify when during the video the banner or caption will be displayed. The first step would be to dig into the Vimeo API and see if there is functionality there for a delay. After that potentially use a delay within JS, or potentially use jQuerey to define when the video starts.
+- Attempt to connect a second page to the main JS file to easily test how the two pages interact together
 
 **What I've learned**
 1. The flow of the code matters
