@@ -1,4 +1,3 @@
-document.getElementById('viewSample').addEventListener('click', sampleView)
 
 function sampleView() {
     const captionText = document.getElementById('enteredCaption').value;
