@@ -15,6 +15,8 @@ Similar to the image banner project, this banner works using the absolute positi
 **What I've learned**
 1. The flow of the code matters
 Rushing to create a proof of concept caused me to write code that didn't work as intended. The syntax was correct, but the order of the code was not which lead to a variable not being reassigned as expected. After I moved the line of code that reassigned the variable to be inside the function rather than before, the code all worked as expected. 
+2. Writing JavaScript within script tags
+This is still an ongoing experiment, so my thoughts will likely change over time. Normally within the script tag in the HTML document I linki to a separate JS file. As a way of experimenting I added event listeners and functions inside the script tags so the files became all in one. I didn't achieve the result I wanted, but I have some new ideas to try now. For a proof of concept idea, I might try and do away with the .js file all together and write the necessary functions into the html documents.
 
 ## Image Banner
 
