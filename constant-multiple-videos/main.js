@@ -1,16 +1,23 @@
 
 const videos = [
-    // 'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1',
-    'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1',
-    'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1'
-    // 'https://player.vimeo.com/video/774480984?h=91651b8511'
+    { source: 'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1', runtime: 10000 },
+    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
+    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
+    { source: 'https://player.vimeo.com/video/774480984?h=91651b8511', runtime: 10000 }
 ];
 
 let currentIndex = 0;
 const iframe = document.getElementById('videoPlayer');
 
+while (currentIndex < videos.length ) {
+    iframe.src = videos[currentIndex].source;
+    console.log(currentIndex)
+    setTimeout(playNextVideo, videos[currentIndex].runtime)
+    currentIndex === videos.length-1 ? currentIndex = 0 : currentIndex++
+}
+
 function playNextVideo() {
-    iframe.src = videos[currentIndex];
+    iframe.src = videos[currentIndex].source;
     console.log(currentIndex)
     currentIndex = (currentIndex + 1) % videos.length;
     console.log(currentIndex)
@@ -19,25 +26,25 @@ function playNextVideo() {
 
 //Eventlistener to detect when the iframe content has loaded
 
-iframe.addEventListener('load', () => {
-    //Check video source
-    console.log('source checked')
-    if (iframe.src.includes('youtube.com')) {
-        const youtubePlayer = new YT.Player(iframe, {
-            events: {
-                'onStateChange': (event) => {
-                    if (event.data === YT.PlayerState.ENDED) {
-                        console.log('ended')
-                        playNextVideo();
-                    }
-                }
-            }
-        });
-    } else if (iframe.src.includes('vimeo.com')) {
-        const vimeoPlayer = new Vimeo.Player(iframe);
-        vimeoPlayer.on('ended', playNextVideo)
-    }
-});
+// iframe.addEventListener('load', () => {
+//     //Check video source
+//     console.log('source checked')
+//     if (iframe.src.includes('youtube.com')) {
+//         const youtubePlayer = new YT.Player(iframe, {
+//             events: {
+//                 'onStateChange': (event) => {
+//                     if (event.data === YT.PlayerState.ENDED) {
+//                         console.log('ended')
+//                         playNextVideo();
+//                     }
+//                 }
+//             }
+//         });
+//     } else if (iframe.src.includes('vimeo.com')) {
+//         const vimeoPlayer = new Vimeo.Player(iframe);
+//         vimeoPlayer.on('ended', playNextVideo)
+//     }
+// });
 
 playNextVideo();
 
