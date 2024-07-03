@@ -1,10 +1,9 @@
 
 const videos = [
-    'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1',
+    // 'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1',
     'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1',
-    'https://vimeo.com/774480984?autoplay=1',
-    'https://www.youtube.com/watch?v=6V8ucUV64iE&ab_channel=ReelOffishalAngling?autoplay=1',
-    
+    'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1'
+    // 'https://player.vimeo.com/video/774480984?h=91651b8511'
 ];
 
 let currentIndex = 0;
@@ -20,24 +19,25 @@ function playNextVideo() {
 
 //Eventlistener to detect when the iframe content has loaded
 
-// iframe.addEventListener('load', () => {
-//     //Check video source
-//     console.log('source checked')
-//     if (iframe.src.includes('youtube.com')) {
-//         const youtubePlayer = new YT.Player(iframe, {
-//             events: {
-//                 'onStateChange': (event) => {
-//                     if (event.data === YT.PlayerState.ENDED) {
-//                         playNextVideo();
-//                     }
-//                 }
-//             }
-//         });
-//     } else if (iframe.src.includes('vimeo.com')) {
-//         const vimeoPlayer = new Vimeo.Player(iframe);
-//         vimeoPlayer.on('ended', playNextVideo)
-//     }
-// });
+iframe.addEventListener('load', () => {
+    //Check video source
+    console.log('source checked')
+    if (iframe.src.includes('youtube.com')) {
+        const youtubePlayer = new YT.Player(iframe, {
+            events: {
+                'onStateChange': (event) => {
+                    if (event.data === YT.PlayerState.ENDED) {
+                        console.log('ended')
+                        playNextVideo();
+                    }
+                }
+            }
+        });
+    } else if (iframe.src.includes('vimeo.com')) {
+        const vimeoPlayer = new Vimeo.Player(iframe);
+        vimeoPlayer.on('ended', playNextVideo)
+    }
+});
 
 playNextVideo();
 
