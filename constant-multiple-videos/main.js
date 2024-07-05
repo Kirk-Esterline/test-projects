@@ -1,28 +1,41 @@
 
+//  *********** Attempt number 3 works!
+
 const videos = [
-    { source: 'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1', runtime: 10000 },
-    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
-    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
-    { source: 'https://player.vimeo.com/video/774480984?h=91651b8511', runtime: 10000 }
+    { source: 'https://player.vimeo.com/video/774464176?h=f06b6a23e4&autoplay=1', runtime: 5000 },
+    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk&autoplay=1', runtime: 5000 },
+    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk&autoplay=1&mute=1', runtime: 5000 },
+    { source: 'https://player.vimeo.com/video/774480984?h=91651b8511&autoplay=1', runtime: 5000 },
+    { source: "https://player.vimeo.com/video/774483718?h=94c2f0f8d4&autoplay=1", runtime: 5000 }
 ];
 
-let currentIndex = 0;
+
 const iframe = document.getElementById('videoPlayer');
 
-while (currentIndex < videos.length ) {
-    iframe.src = videos[currentIndex].source;
+// while (currentIndex < videos.length ) {
+//     iframe.src = videos[currentIndex].source;
+//     console.log(currentIndex)
+//     setTimeout(playNextVideo, videos[currentIndex].runtime)
+//     currentIndex === videos.length-1 ? currentIndex = 0 : currentIndex++
+// }
+
+function playVideos() {
+    let currentIndex = 0;
     console.log(currentIndex)
-    setTimeout(playNextVideo, videos[currentIndex].runtime)
-    currentIndex === videos.length-1 ? currentIndex = 0 : currentIndex++
+    console.log(videos[currentIndex].runtime);
+    let videoInterval = setInterval(nextVideo, videos[currentIndex].runtime)
+
+    function nextVideo() {
+        iframe.src = videos[currentIndex].source;
+        console.log(currentIndex, 'video loaded')
+        currentIndex++
+        if (currentIndex === videos.length) {
+            currentIndex = 0
+        }
+    }
 }
 
-function playNextVideo() {
-    iframe.src = videos[currentIndex].source;
-    console.log(currentIndex)
-    currentIndex = (currentIndex + 1) % videos.length;
-    console.log(currentIndex)
-
-}
+// playVideos();
 
 //Eventlistener to detect when the iframe content has loaded
 
@@ -46,7 +59,7 @@ function playNextVideo() {
 //     }
 // });
 
-playNextVideo();
+// playNextVideo();
 
 
 //Attempt number 2, closer but no cigar. Im now thinking that the best option is a combination of the two.
