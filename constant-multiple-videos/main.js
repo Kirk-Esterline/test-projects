@@ -9,18 +9,14 @@ const videos = [
     { source: "https://player.vimeo.com/video/774483718?h=94c2f0f8d4&autoplay=1", runtime: 5000 }
 ];
 
-
+document.getElementById('startVideos').addEventListener('click', playVideos)
+document.getElementById('stopVideos').addEventListener('click', stopVideos)
 const iframe = document.getElementById('videoPlayer');
+let currentIndex;
 
-// while (currentIndex < videos.length ) {
-//     iframe.src = videos[currentIndex].source;
-//     console.log(currentIndex)
-//     setTimeout(playNextVideo, videos[currentIndex].runtime)
-//     currentIndex === videos.length-1 ? currentIndex = 0 : currentIndex++
-// }
 
 function playVideos() {
-    let currentIndex = 0;
+    currentIndex = 0
     console.log(currentIndex)
     console.log(videos[currentIndex].runtime);
     let videoInterval = setInterval(nextVideo, videos[currentIndex].runtime)
@@ -35,7 +31,11 @@ function playVideos() {
     }
 }
 
-// playVideos();
+function stopVideos() {
+    currentIndex = videos.length + 1
+}
+
+
 
 //Eventlistener to detect when the iframe content has loaded
 
