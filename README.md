@@ -12,6 +12,8 @@ I used the video-banner project as a starting point and created a function that 
 **What I've Learned**
 1. Autoplay is complecated
 Rightfully, getting a video to autoplay is a tricky business with browsers being a gatekeeper preventing unwanted videos and auto from playing. But, by finding the right attributes to use in the iframe and in the src URL it is possible to get videos to autoplay.
+2. The settimeout() method can react in unexpected ways.
+When using the settimeout() method to load videos and allow them to play for the videos full length I have gotten unexpected play times. This could be user error and the wrong timeout time is being passed into the function, or it could be thrown off by the video load time, but the results are not quite what I expected them to be. 
 
 ## Video-Banner
 
