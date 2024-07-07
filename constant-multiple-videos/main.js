@@ -1,28 +1,64 @@
+// Attempt number 4 with new AI recommendations
 
 const videos = [
-    { source: 'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1', runtime: 10000 },
-    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
-    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
-    { source: 'https://player.vimeo.com/video/774480984?h=91651b8511', runtime: 10000 }
-];
+        { type: 'vimeo', id: '774480984' },
+        { type: 'youtube', id: 'LqAutI6vNIY&t'},
+        { type: 'youtube', id: 'U-j2mQbO_Kg&t'}
+    ];
+    
+    const iframe = document.getElementById('videoPlayer');
+    const title = document.getElementById('videoTitle');
 
-let currentIndex = 0;
-const iframe = document.getElementById('videoPlayer');
+    let currentIndex = 0;
 
-while (currentIndex < videos.length ) {
-    iframe.src = videos[currentIndex].source;
-    console.log(currentIndex)
-    setTimeout(playNextVideo, videos[currentIndex].runtime)
-    currentIndex === videos.length-1 ? currentIndex = 0 : currentIndex++
-}
+    
+    function playFirstVideo() {
+        iframe.src = videos[0].source;
+        title.innerText = videos[currentIndex].title;
+        currentIndex++
+        iframe.addEventListener('ended', playNextVideo);
+        iframe.play();
+    }
 
-function playNextVideo() {
-    iframe.src = videos[currentIndex].source;
-    console.log(currentIndex)
-    currentIndex = (currentIndex + 1) % videos.length;
-    console.log(currentIndex)
+    function playNextVideo() {
+        iframe.removeEventListener('ended', playNextVideo)
+        if (currentIndex === videos.length) {
+            currentIndex = 0
+        }
+        iframe.src = videos[currentIndex].source;
+        title.innerText = videos[currentIndex].title;
+        currentIndex++
+        iframe.play();
+        iframe.addEventListener('ended', playNextVideo)
+    }
 
-}
+    document.getElementById('startVideos').addEventListener('click', playFirstVideo)
+
+
+// const videos = [
+//     { source: 'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1', runtime: 10000 },
+//     { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
+//     { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
+//     { source: 'https://player.vimeo.com/video/774480984?h=91651b8511', runtime: 10000 }
+// ];
+
+// let currentIndex = 0;
+// const iframe = document.getElementById('videoPlayer');
+
+// while (currentIndex < videos.length ) {
+//     iframe.src = videos[currentIndex].source;
+//     console.log(currentIndex)
+//     setTimeout(playNextVideo, videos[currentIndex].runtime)
+//     currentIndex === videos.length-1 ? currentIndex = 0 : currentIndex++
+// }
+
+// function playNextVideo() {
+//     iframe.src = videos[currentIndex].source;
+//     console.log(currentIndex)
+//     currentIndex = (currentIndex + 1) % videos.length;
+//     console.log(currentIndex)
+
+// }
 
 //Eventlistener to detect when the iframe content has loaded
 
@@ -46,7 +82,7 @@ function playNextVideo() {
 //     }
 // });
 
-playNextVideo();
+// playNextVideo();
 
 
 //Attempt number 2, closer but no cigar. Im now thinking that the best option is a combination of the two.
