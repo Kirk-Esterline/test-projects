@@ -1,6 +1,20 @@
 # test-projects
 **A repo for testing portions of code for projects I am working on**
 
+## Constant-Multiple-Videos
+
+An attempt to get a string of videos to play one after another.
+The backstory, a client wanted a constantly running loop of videos that could be displayed during a trade show. Several videos had been commissioned and hosted in different places. My goal was to create something that could be learned quickly and reused easily. This is my proof of concept for this project.
+
+**How it works**
+I used the video-banner project as a starting point and created a function that would use the setInterval() function to input an updated source into an iframe element.
+
+**What I've Learned**
+1. Autoplay is complecated
+Rightfully, getting a video to autoplay is a tricky business with browsers being a gatekeeper preventing unwanted videos and auto from playing. But, by finding the right attributes to use in the iframe and in the src URL it is possible to get videos to autoplay.
+2. The settimeout() method can react in unexpected ways.
+When using the settimeout() method to load videos and allow them to play for the videos full length I have gotten unexpected play times. This could be user error and the wrong timeout time is being passed into the function, or it could be thrown off by the video load time, but the results are not quite what I expected them to be. 
+
 ## Video-Banner
 
 This is a proof of concept for a tool that would allow a video banner or caption to be added and edited without the need to edit the videos primary file. 
@@ -16,7 +30,7 @@ Similar to the image banner project, this banner works using the absolute positi
 1. The flow of the code matters
 Rushing to create a proof of concept caused me to write code that didn't work as intended. The syntax was correct, but the order of the code was not which lead to a variable not being reassigned as expected. After I moved the line of code that reassigned the variable to be inside the function rather than before, the code all worked as expected. 
 2. Writing JavaScript within script tags
-This is still an ongoing experiment, so my thoughts will likely change over time. Normally within the script tag in the HTML document I linki to a separate JS file. As a way of experimenting I added event listeners and functions inside the script tags so the files became all in one. I didn't achieve the result I wanted, but I have some new ideas to try now. For a proof of concept idea, I might try and do away with the .js file all together and write the necessary functions into the html documents.
+This is still an ongoing experiment, so my thoughts will likely change over time. Normally within the script tag in the HTML document I link to a separate JS file. As a way of experimenting I added event listeners and functions inside the script tags so the files became all in one. I didn't achieve the result I wanted, but I have some new ideas to try now. For a proof of concept idea, I might try and do away with the .js file all together and write the necessary functions into the html documents.
 
 ## Image Banner
 

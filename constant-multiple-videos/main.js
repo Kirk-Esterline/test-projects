@@ -1,5 +1,7 @@
 // Attempt number 4 with new AI recommendations
 
+//  *********** Attempt number 3 works!
+
 const videos = [
         { type: 'vimeo', id: '774480984' },
         { type: 'youtube', id: 'LqAutI6vNIY&t'},
