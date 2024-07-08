@@ -3,10 +3,10 @@
 //  *********** Attempt number 3 works!
 
 const videos = [
-    { source: 'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1', runtime: 10000 },
-    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
-    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
-    { source: 'https://player.vimeo.com/video/774480984?h=91651b8511', runtime: 10000 }
+    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk&autoplay=1', runtime: 10000 },
+    { source: 'https://player.vimeo.com/video/774464176?h=f06b6a23e4&autoplay=1', runtime: 10000 },
+    // { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk&autoplay=1', runtime: 10000 },
+    { source: 'https://player.vimeo.com/video/774480984?h=91651b8511&autoplay=1', runtime: 10000 }
 ];
     
     const iframe = document.getElementById('videoPlayer');
@@ -19,20 +19,23 @@ const videos = [
         iframe.src = videos[0].source;
         title.innerText = videos[currentIndex].title;
         currentIndex++
-        iframe.addEventListener('ended', playNextVideo);
-        iframe.play();
+        iframe.addEventListener('canplaythrough', firstVideoPlaying());
+        function firstVideoPlaying() {
+            console.log('Video Loaded'),
+            iframe.addEventListener('ended', playNextVideo())
+        }
     }
 
     function playNextVideo() {
-        iframe.removeEventListener('ended', playNextVideo)
+        console.log('Video Ended - called the next one', currentIndex)
+        iframe.removeEventListener('ended', playNextVideo())
         if (currentIndex === videos.length) {
             currentIndex = 0
         }
         iframe.src = videos[currentIndex].source;
         title.innerText = videos[currentIndex].title;
         currentIndex++
-        iframe.play();
-        iframe.addEventListener('ended', playNextVideo)
+        iframe.addEventListener('ended', playNextVideo())
     }
 
     document.getElementById('startVideos').addEventListener('click', playFirstVideo)
