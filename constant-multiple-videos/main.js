@@ -3,10 +3,11 @@
 //  *********** Attempt number 3 works!
 
 const videos = [
-        { type: 'vimeo', id: '774480984' },
-        { type: 'youtube', id: 'LqAutI6vNIY&t'},
-        { type: 'youtube', id: 'U-j2mQbO_Kg&t'}
-    ];
+    { source: 'https://player.vimeo.com/video/774464176?h=f06b6a23e4?autoplay=1', runtime: 10000 },
+    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
+    { source: 'https://www.youtube.com/embed/LqAutI6vNIY?si=sqnFvAWDRrglWiAk?autoplay=1', runtime: 10000 },
+    { source: 'https://player.vimeo.com/video/774480984?h=91651b8511', runtime: 10000 }
+];
     
     const iframe = document.getElementById('videoPlayer');
     const title = document.getElementById('videoTitle');
