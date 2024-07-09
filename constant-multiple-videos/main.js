@@ -16,10 +16,10 @@ const videos = [
 
     
     function playFirstVideo() {
+        iframe.addEventListener('loaded', firstVideoPlaying());
         iframe.src = videos[0].source;
         title.innerText = videos[currentIndex].title;
         currentIndex++
-        iframe.addEventListener('canplaythrough', firstVideoPlaying());
         function firstVideoPlaying() {
             console.log('Video Loaded'),
             iframe.addEventListener('ended', playNextVideo())
@@ -28,14 +28,14 @@ const videos = [
 
     function playNextVideo() {
         console.log('Video Ended - called the next one', currentIndex)
-        iframe.removeEventListener('ended', playNextVideo())
+        iframe.removeEventListener('ended', playNextVideo)
         if (currentIndex === videos.length) {
             currentIndex = 0
         }
         iframe.src = videos[currentIndex].source;
         title.innerText = videos[currentIndex].title;
         currentIndex++
-        iframe.addEventListener('ended', playNextVideo())
+        iframe.addEventListener('ended', playNextVideos)
     }
 
     document.getElementById('startVideos').addEventListener('click', playFirstVideo)
