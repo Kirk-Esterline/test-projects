@@ -9,6 +9,10 @@ The backstory, a client wanted a constantly running loop of videos that could be
 **How it works**
 I used the video-banner project as a starting point and created a function that would use the setInterval() function to input an updated source into an iframe element.
 
+
+**Future Attempts**
+- Use the YouTube API and Vimeo API
+
 **What I've Learned**
 1. Autoplay is complecated
 Rightfully, getting a video to autoplay is a tricky business with browsers being a gatekeeper preventing unwanted videos and auto from playing. But, by finding the right attributes to use in the iframe and in the src URL it is possible to get videos to autoplay.
