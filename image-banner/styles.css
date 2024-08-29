@@ -1,4 +1,4 @@
-div {
+figure {
     width: 70%;
     padding: 0 15% 0 15%;
     position: relative;
@@ -9,7 +9,7 @@ img {
 }
 
 
-span {
+figcaption {
     display: inline-block;
     width: 100%;
     text-align: center;
@@ -18,3 +18,10 @@ span {
     left: 0;
     /* z-index: 3; */
 }
+
+
+/*
+
+To add this image banner to WordPress manually add a class to the 'figcaption' by editing as html
+
+*/
