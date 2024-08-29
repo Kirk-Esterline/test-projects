@@ -47,6 +47,7 @@ This works by using the 'position' properties in CSS. By giving the containing d
 
 **Future Plans**
 The plan is to make this a custom WordPress plugin that can be added to images to display a chosen banner on the image. 
+
 (A simple way to implement this is to convert the block to custom HTML and manually add a class to the 'figcaption' so the additional CSS classes will be applied)
 
 ## Interactive Gallery
