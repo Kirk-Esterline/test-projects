@@ -1,0 +1,23 @@
+figure {
+    width: 50%;
+    margin: 2.5% 25% 0 25%;
+    display: grid;
+    & > * {
+        grid-column: 1;
+        grid-row: 1;
+    }
+}
+
+img {
+    width: 100%;
+}
+
+.banner {
+    height: 20%;
+    background: linear-gradient(#ff1111, #ff1111 83%, #990a0a);
+    text-align: center;
+    top: 0;
+    left: 0;
+    color: white;
+    text-shadow: .1em .1em .2em #828282;
+}
