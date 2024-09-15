@@ -20,6 +20,7 @@ figcaption {
     top: 0;
     left: 0;
     color: white;
+    font-size: 2em;
     text-shadow: .1em .1em .2em #828282;
 }
 
