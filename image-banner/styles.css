@@ -2,6 +2,7 @@ figure {
     width: 50%;
     margin: 2.5% 25% 0 25%;
     position: relative;
+    --font-size: 0px;
 }
 
 img {
@@ -21,7 +22,7 @@ figcaption {
     top: 0;
     left: 0;
     color: white;
-    font-size: 4em;
+    font-size: var(--font-size);
     text-shadow: .1em .1em .2em #828282;
 }
 
