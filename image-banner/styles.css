@@ -3,7 +3,7 @@ figure {
     margin: 2.5% 25% 0 25%;
     position: relative;
     --font-size: 0px;
-    --padding-top: 16px;
+    --padding-size: 16px;
 }
 
 img {
@@ -16,10 +16,9 @@ figcaption {
     display: inline-block;
     position: absolute;
     width: 100%;
-    height: 15%;
     background: linear-gradient(#ff1111, #ff1111 83%, #990a0a);
     text-align: center;
-    padding-top: var(--padding-top);
+    padding: var(--padding-top) 0;
     top: 0;
     left: 0;
     color: white;
