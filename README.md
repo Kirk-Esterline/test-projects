@@ -43,9 +43,11 @@ This is a test of adding text on top of an image.
 The end goal is a plugin or JS script that will add a banner over an image. For instance, adding a 'new release' banner over a product image. 
 
 **How it works**
-This works by using the 'position' properties in CSS. By giving the containing div a postion of 'relative' it allowed descendant elements to be positioned in relation to that containing elements. When the 'span' element is offset from its original position, it is now positioned in relation to the containing div.
+This works by using the 'position' properties in CSS. By giving the containing div a position of 'relative' it allowed descendant elements to be positioned in relation to that containing elements. When the 'span' element is offset from its original position, it is now positioned in relation to the containing div. Alternativly there is a second method that uses Grid to place the text on top of the image by placing both the image and text in grid 0 and column 0. 
 
-A second method was added which uses Grid instead of position absolute to lay the two elements ontop of each other. By placing the two elements in column and row one they naturally get placed on top of each other. 
+**Recent Upgrades**
+- A JS script was added that calculates a font size based on the width of the parent element. That means the font size is continuously variable and appears to be constantly proportional to the banner background rather than adding media queries that have different breakpoints. This is a nice improvement and mimics the behavior of the image that is being resized behind it. 
+- A second method was added which uses Grid instead of position absolute to lay the two elements ontop of each other. By placing the two elements in column and row one they naturally get placed on top of each other. 
 
 **Future Plans**
 The plan is to make this a custom WordPress plugin that can be added to images to display a chosen banner on the image. 
