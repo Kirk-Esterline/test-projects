@@ -40,3 +40,22 @@ function resizeFont() {
 
 window.addEventListener('resize', resizeFont)
 resizeFont()
+
+// This is the code that Copilot gave that made me realize the error of my ways.
+
+// function resizeFonts() {
+//     const figures = document.querySelectorAll('figure')
+
+//     figures.forEach(figure => {
+//         const parentWidth = figure.offsetWidth
+//         const parentHeight = figure.offsetHeight
+//         const newFontSize = parentWidth / 50
+//         const newTextPadding = parentHeight / 50
+        
+//         figure.style.setProperty('--font-size', `${newFontSize}px`)
+//         figure.style.setProperty('--padding-top', `${newTextPadding}px`)
+//     })
+// }
+
+// window.addEventListener('resize', resizeFonts)
+// resizeFonts()
