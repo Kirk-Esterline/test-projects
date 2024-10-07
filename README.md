@@ -62,6 +62,7 @@ The plan is to make this a custom WordPress plugin that can be added to images t
 ## Interactive Gallery
 
 This test code aims to create an image gallery, where the hero image and description change based on the gallery image that was clicked. 
+(A challenge will be how do we get the information into WP. Maybe use the image name and description again?)
 
 **How it works**
 Event listeners were added to each of the gallery images and when clicked a function is called that changes the 'src' of the hero image. Additionally 'innerText' is added to the description 'p' element when different gallery images are clicked on.
