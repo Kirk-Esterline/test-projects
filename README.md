@@ -43,11 +43,16 @@ This is a test of adding text on top of an image.
 The end goal is a plugin or JS script that will add a banner over an image. For instance, adding a 'new release' banner over a product image. 
 
 **How it works**
-This works by using the 'position' properties in CSS. By giving the containing div a position of 'relative' it allowed descendant elements to be positioned in relation to that containing elements. When the 'span' element is offset from its original position, it is now positioned in relation to the containing div. Alternativly there is a second method that uses Grid to place the text on top of the image by placing both the image and text in grid 0 and column 0. 
+This works by using the 'position' properties in CSS. By giving the containing div a position of 'relative' it allowed descendant elements to be positioned in relation to that containing elements. When the 'span' element is offset from its original position, it is now positioned in relation to the containing div. Alternatively there is a second method that uses Grid to place the text on top of the image by placing both the image and text in grid 0 and column 0. A JavaScript function is used to calculate the desired font size based on the width of the image, and the font is recalculated every time the window loads or is resized. The result ends up being a font that stays in proportion to the image without needing many different @mediaqueries. 
 
 **Recent Upgrades**
 - A JS script was added that calculates a font size based on the width of the parent element. That means the font size is continuously variable and appears to be constantly proportional to the banner background rather than adding media queries that have different breakpoints. This is a nice improvement and mimics the behavior of the image that is being resized behind it. 
-- A second method was added which uses Grid instead of position absolute to lay the two elements ontop of each other. By placing the two elements in column and row one they naturally get placed on top of each other. 
+- A second method was added which uses Grid instead of position absolute to lay the two elements ontop of each other. By placing the two elements in column and row one they naturally get placed on top of each other.
+- Updated the formula so that multiple images are now updated at once. Previously using querySelector only one image would be styled, now with querySelectorAll and iterating over that array all tagged images are properly styled.
+
+**What I've learned**
+1. Using querySelector only returns the first instance the selector is found. This should have been obvious but it took experiencing it to fully understand.
+2. QuerySelectorAll creates a Nodelist which is not an array, but is 'array-like'. This allows us to create an array from the array-like object using the "Array.from(...)" method which is helpful when needing to style multiple arrays. But, keep in mind that we are now working with an array, not a single object.  
 
 **Future Plans**
 The plan is to make this a custom WordPress plugin that can be added to images to display a chosen banner on the image. 
@@ -57,6 +62,7 @@ The plan is to make this a custom WordPress plugin that can be added to images t
 ## Interactive Gallery
 
 This test code aims to create an image gallery, where the hero image and description change based on the gallery image that was clicked. 
+(A challenge will be how do we get the information into WP. Maybe use the image name and description again?)
 
 **How it works**
 Event listeners were added to each of the gallery images and when clicked a function is called that changes the 'src' of the hero image. Additionally 'innerText' is added to the description 'p' element when different gallery images are clicked on.
