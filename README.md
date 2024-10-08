@@ -14,7 +14,7 @@ I used the video-banner project as a starting point and created a function that 
 - Use the YouTube API and Vimeo API
 
 **What I've Learned**
-1. Autoplay is complecated
+1. Autoplay is complicated
 Rightfully, getting a video to autoplay is a tricky business with browsers being a gatekeeper preventing unwanted videos and auto from playing. But, by finding the right attributes to use in the iframe and in the src URL it is possible to get videos to autoplay.
 2. The settimeout() method can react in unexpected ways.
 When using the settimeout() method to load videos and allow them to play for the videos full length I have gotten unexpected play times. This could be user error and the wrong timeout time is being passed into the function, or it could be thrown off by the video load time, but the results are not quite what I expected them to be. 
@@ -73,3 +73,4 @@ Event listeners were added to each of the gallery images and when clicked a func
 **What I've learned**
 1. I learned to be less specific about the use of '.this' which allowed for more flexibility. For example, in main.js newImage is defined as 'this'. Originally it was defined as 'this.src' which worked fine, but it required a new binding to be declared to target different parts of the element that was clicked. By being less specific and defining newImage as simply 'this' only one binding is needed and all the attributes of newImage can be accessed, for example, newImage.src or newImage.alt
 2. I learned about the html data attribute during this project. The data attribute enables additional content to be added to an element without changing the way it behaves or is displayed. And, importantly 'data' can be accessed easily and cleanly by JS.
+3. WordPress uses both a 'src' and a 'srcset' attribute with img elements. While adding this script to a WP site, updating the img src alone didn't change the image. However, by passing the heroImage both the 'src' and 'srcset' of the selected image the heroImage did change. The 'srcset' is used by the browser to have a collection of images available for different screen circumstances to provide the most appropriate image size.
