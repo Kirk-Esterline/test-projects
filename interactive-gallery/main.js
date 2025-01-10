@@ -33,3 +33,15 @@ document.addEventListener('DOMContentLoaded', () => { // an event listener waiti
 		document.querySelector('figcaption').style.setProperty('display', 'none')
 }
 })
+
+let nums1 = [1, 2, 3, 0, 0, 0];
+let m = 3;
+let nums2 = [2, 5, 6];
+let n = 3;
+
+function merge() {
+    const newArray = nums1.slice(0, m).concat(nums2).sort((a,b) => a - b)
+    console.log(newArray)
+};
+
+merge()
