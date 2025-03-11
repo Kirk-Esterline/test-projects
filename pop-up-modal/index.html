@@ -21,4 +21,17 @@
     </div>
         
 </body>
+<script>
+    function resizeFont() {
+        const content = document.querySelector('.pop-up-container')
+        const contentWidth = content.offsetWidth
+        const contentHeight = content.offsetHeight
+        const newBoxWidth = contentWidth
+        const newBoxHeight = contentHeight
+        content.style.setProperty('width', `${newBoxWidth}px !important`)
+        content.style.setProperty('height', `${newBoxHieght}px !important`)
+    }
+    window.addEventListener('resize', resizeFont)
+    resizeFont()
+    </script>
 </html>

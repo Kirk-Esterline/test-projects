@@ -47,7 +47,6 @@ img {
 @media (max-width: 560px) {
 	.pop-up-container {
 		flex-direction: column;
-		width: 100%;
 	}
 	.pop-up-image {
 		width: 100%;
