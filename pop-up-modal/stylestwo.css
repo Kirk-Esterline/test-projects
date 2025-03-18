@@ -1,6 +1,13 @@
 /* Here is the CSS that ended up being used for the popup */
 /* Now seeing the errors that possibly prevented it from working */
 
+.curved-heading {
+	background-color: lightblue;
+	padding: 20px;
+	border-radius: 50px;
+	text-align: center;
+}
+
 .pop-up-box-container {
 	width: 50% !important;
 	height: 550px !important;

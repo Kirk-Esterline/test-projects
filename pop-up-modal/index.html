@@ -12,13 +12,25 @@
             <img src="images/test-image.jpg" alt="Keeper Sized Striped Bass" />
         </figure>
         <section class="pop-up-text">
-            <h1>Join Our Mailing List</h1>
+            <h1 class="curved-heading">Join Our Mailing List</h1>
             <P>
                 Stay up to date on the latest from Striper-Gear
             </P>
             <div class="wp-block-button text-link"><a class="wp-block-button__link wp-element-button" href="http://localhost/striper-gear- wordpress/join-our-mailing-list/">Join Our Mailing List</a></div>
         </section>
     </div>
+
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Define the circular path -->
+        <defs>
+          <path id="circlePath" d="M 150,150 m -100,0 a 100,100 0 1,1 200,0 a 100,100 0 1,1 -200,0" />
+        </defs>
+      
+        <!-- Add the text along the circular path -->
+        <text font-size="20" text-anchor="middle" fill="black">
+          <textPath href="#circlePath" startOffset="50%">Curved Heading Text</textPath>
+        </text>
+      </svg>
         
 </body>
 <script>
