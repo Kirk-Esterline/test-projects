@@ -1,0 +1,9 @@
+.top-heading {
+    height: 100px;
+    padding: 200px 0 0 0;
+    margin: 10% 10% 0 10%;
+    border-radius: 25px;
+    text-align: center;
+    background-image: url(sunrise-pic.jpg);
+    background-size: cover;
+}
